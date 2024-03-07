@@ -36,7 +36,7 @@ if (selected == 'Diabetes Prediction'):
     col1, col2, col3 = st.columns(3)
     
     with col1:
-        Pregnancies = st.text_input('Number of Pregnancies')
+        BloodSugarLevel = st.text_input('Blood Sugar level')
         
     with col2:
         Glucose = st.text_input('Glucose Level')
@@ -66,7 +66,7 @@ if (selected == 'Diabetes Prediction'):
     # creating a button for Prediction
     
     if st.button('Diabetes Test Result'):
-        diab_prediction = diabetes_model.predict([[Pregnancies, Glucose, BloodPressure, SkinThickness, Insulin, BMI, DiabetesPedigreeFunction, Age]])
+        diab_prediction = diabetes_model.predict([[BloodSugarLevel, Glucose, BloodPressure, SkinThickness, Insulin, BMI, DiabetesPedigreeFunction, Age]])
         
         if (diab_prediction[0] == 1):
           diab_diagnosis = 'The person is diabetic'
